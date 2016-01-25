@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS FOR FUN</title>
+
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">
+        <img onclick="addQuote()" id="yoda-umut" src="images/yoda_umut.jpg" alt="">
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <p id="quotes"></p>
+        <button id="continue" class="btn-sw" onclick="openPlanet()">CONTINUE</button>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <img onclick="removeQuote()" id="vader" src="images/vader.jpg" alt="">
+    </div>
+</div>
+<script type="text/javascript">
+    var yodaumut = document.getElementById("yoda-umut");
+    var vader = document.getElementById("vader");
+    yodaumut.style.cursor = "pointer";
+    vader.style.cursor = "pointer";
+
+    var button = document.getElementById("continue");
+    button.style.position = "absolute";
+    button.style.left = "45%";
+    button.style.top = "90%";
+
+    var array = [
+        "Train yourself to let go of everything you fear to lose.",
+        "Always pass on what you have learned.",
+        "Powerful you have become, the dark side I sense in you.",
+        "PATIENCE YOU MUST HAVE my young padawan",
+        "Powerful you have become, the dark side I sense in you.",
+        "Ohhh. Great warrior.Wars not make one great.",
+        "Difficult to see. Always in motion is the future..",
+        "Looking? Found someone you have, eh?",
+        "If into the security recordings you go, only pain will you find.",
+        "Happens to every guy sometimes this does",
+        "This has been a very positive test for Kawasaki,",
+        "The dark side clouds everything. Impossible to see the future is."
+    ];
+
+    function addQuote() {
+        var quotes = document.getElementById("quotes");
+        var p = document.createElement("p");
+        var br = document.createElement("br");
+        p.style.textAlign = "center";
+        p.style.fontSize = "20px";
+        p.style.fontFamily = "'Helvetica','Arial',sans-serif";
+        p.textContent = array[Math.floor((Math.random() * 12))];
+
+        quotes.appendChild(p);
+    }
+
+    function removeQuote() {
+        var quotes = document.getElementById("quotes");
+        quotes.removeChild(quotes.lastChild);
+    }
+
+    function openPlanet() {
+        window.open("planet.html");
+    }
+</script>
+</body>
+</html>

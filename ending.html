@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/ending.css">
+	<style>
+      body {
+      	 margin: 0px;
+        padding: 0px;
+     
+      }
+     #MyCanvas1{
+    padding-top: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 300px;
+}
+        .text{width: 1000px;}
+    </style>
+</head>
+<body onload="init();">
+<canvas id="myCanvas" width="1000" height="250" style="margin-left: 300px"></canvas>
+ 
+<canvas id="MyCanvas1" width="300" height="110"></canvas>
+
+
+	<script type="text/javascript">
+	var can, ctx, step, steps = 0,
+              delay = 20;
+ 
+        function init() {
+
+            can = document.getElementById("MyCanvas1");
+            ctx = can.getContext("2d");
+            ctx.fillStyle = "#ff6";
+            ctx.font = "20pt Verdana";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            step = 0;
+            steps = can.width + 50;
+            RunTextLeftToRight();
+        }
+ 
+        function RunTextLeftToRight() {
+            step++;
+            ctx.clearRect(0, 0, can.width, can.height);
+            ctx.save();
+            ctx.translate(step, can.height /2);
+            ctx.fillText("You won a lightsaber !!!", 20, 40);
+            ctx.restore();
+            if (step == steps)
+                step = 0;
+            if (step < steps)
+            var t = setTimeout('RunTextLeftToRight()', delay);
+        }
+	
+ 
+document.body.style.backgroundImage = "url('images/stars.jpg')";
+	
+	  var canvas = document.getElementById('myCanvas');
+	  var context = canvas.getContext('2d');
+    
+      context.shadowColor = '#999';
+      context.shadowBlur = 10;
+      context.shadowOffsetX = 10;
+      context.shadowOffsetY = 10;
+
+      context.font = '40pt Starjhol';
+      context.lineWidth = 1;
+      // stroke color
+      context.strokeStyle = '#ff6';
+      context.strokeText('CONGRATULATIONS!', 400,200);
+
+		</script>
+<section class="the-demo">
+		<div class="example-item">
+			<div class="lightsaber">
+				<label for="yoda-example"></label>
+				<input type="checkbox" id="yoda-example" checked="checked">
+				<div class="switch"></div>
+				<div class="plasma yoda"></div>
+			</div>
+			<h3>Yoda</h3>
+		</div>
+		<div class="example-item">
+			<div class="lightsaber">
+				<label for="darth-vader-example"></label>
+				<input type="checkbox" id="darth-vader-example" checked="checked">
+				<div class="switch"></div>
+				<div class="plasma vader"></div>
+			</div>
+			<h3>Vader</h3>
+		</div>
+		<div class="example-item">
+			<div class="lightsaber">
+				<label for="windu-example"></label>
+				<input type="checkbox" id="windu-example">
+				<div class="switch"></div>
+				<div class="plasma windu"></div>
+			</div>
+			<h3>Windu</h3>
+		</div>
+		<div class="example-item clearfix">
+			<div class="lightsaber">
+				<label for="obi-wan-example"></label>
+				<input type="checkbox" id="obi-wan-example">
+				<div class="switch"></div>
+				<div class="plasma obi-wan"></div>
+			</div>
+			<h3>Obi</h3>
+		</div>
+
+	</section>
+
+
+	<style>
+		/* Only for Demo */
+		body {
+			background: #333;
+			color: #fff;
+			font-family: arial;
+		}
+
+		.the-demo {
+			width: 960px;
+			margin: 0 auto;
+		}
+
+		.example-item {
+			float: left;
+			width: 25%;
+			padding-top: 325px;
+		}
+
+	</style>
+
+
+
+
+</body>
+</html>
+	

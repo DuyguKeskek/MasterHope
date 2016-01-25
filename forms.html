@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS FOR FUN</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section class="container centered" id="form-container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <article id="forms">
+                <form id="form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Surname</label>
+                        <input type="text" class="form-control" name="surname" id="surname" placeholder="Surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password"
+                               placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="planetbox">Planets</label>
+                        <select class="form-control" id="planetbox">
+                            <option value="SYC-36">SYC-36</option>
+                            <option value="KKA-12">KKA-12</option>
+                            <option value="STW-92">STW-92</option>
+                        </select>
+                    </div>
+                </form>
+                <button onclick="printResult()" class="btn btn-default">JOIN UNIVERSE!</button>
+            </article>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</section>
+
+<section class="centered" id="form-result">
+    <p id="hacked" style="display: none; font-size: 50px;">Congratulations ! <br> You are hacked by the DARK SIDE !</p>
+
+    <article id="result">
+
+    </article>
+    <img onclick="nextPage()" id="vadergif" style="display: none" src="images/vader.gif" width="800px" height="400px" alt="">
+</section>
+
+<script type="text/javascript">
+    function hideForm() {
+        var form = document.getElementById("form-container");
+        form.style.display = "none";
+    }
+
+    function showVader() {
+        var form = document.getElementById("vadergif");
+        form.style.display = "block";
+        form.style.cursor = "pointer";
+    }
+
+    function showHacked() {
+        var form = document.getElementById("hacked");
+        form.style.display = "block";
+    }
+
+    function nextPage() {
+        window.open("masteryoda.html");
+    }
+
+    function printResult() {
+        var result = document.getElementById("result");
+
+        var form = document.getElementById("form");
+        var text = "";
+        var i;
+        for (i = 0; i < form.length; i++) {
+            text = form.elements[i].value;
+            console.log(text);
+            result.innerHTML += "<p class='left' style='margin-right: 25px'>" + text + "</p>";
+        }
+
+        hideForm();
+        showVader();
+        showHacked();
+    }
+
+    function openMasterYoda() {
+        window.open("masteryoda.html");
+    }
+</script>
+</body>
+</html>

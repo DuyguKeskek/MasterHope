@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS FOR FUN</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<article class="starwars">
+    <audio preload="auto">
+        <source src="http://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.ogg" type="audio/ogg"/>
+        <source src="http://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3" type="audio/mpeg"/>
+    </audio>
+
+    <section class="start">
+        <p>Start</p>
+    </section>
+
+    <div class="animation">
+        <section class="intro">
+            A long time ago, in a galaxy far,<br> far away....
+        </section>
+
+        <section class="titles">
+            <div contenteditable="true" spellcheck="false">
+                <p style="text-align: center;">EPISODE IV</p>
+                <p style="text-align: center;">A NEW HOPE</p>
+                <p>
+                    It is a dark time for all the
+                    lecturers and students in the galaxy.
+                    Although the semester is ending,
+                    many students do not know anything
+                    about their courses.
+                    Since students are in trouble,
+                    they complain and some of them attempt
+                    to join the dark side for a better education.
+                    wrong choices and chaos are everywhere.
+                </p>
+
+                <p>
+                    But there is a light incoming which
+                    can bring a better way to educate all
+                    the students across the galaxy.
+                    And only one has the power and will.
+                    He educates the students in such a way
+                    that all of them are special
+                    and waiting to be discovered.
+                    He is a master. He is wise.
+                </p>
+
+                <p style="text-align: center;">HE IS THE GALAXY'S LAST HOPE.</p>
+            </div>
+        </section>
+    </div>
+</article>
+
+<img id="hoca" class="centered hidden" src="images/hoca.jpg" alt="">
+<button class="centered hidden btn-sw" style="top: 80%" id="continue" onclick="openForms()">START THE ADVENTURE</button>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+<script src="js/index.js"></script>
+<script>
+    function openForms() {
+        window.open("forms.html");
+    }
+
+    setTimeout(function () {
+        $("#hoca").show();
+    }, 55000);
+
+    setTimeout(function () {
+        $("#continue").show();
+    }, 55000);
+</script>
+</body>
+</html>

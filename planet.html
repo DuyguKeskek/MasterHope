@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS FOR FUN</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="planet">
+<button class="btn-sw" style="position: absolute; left: 80%; top: 5%; color: black;" onclick="openQuiz()">CLICK TO LEAVE THIS ANONYMOUS GALAXY</button>
+<canvas id="myCanvas" width="1920px" height="1080px"></canvas>
+<script>
+    function writeMessage(canvas, message) {
+        var context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.font = '18pt Calibri';
+        context.fillStyle = 'white';
+        context.fillText(message, 10, 25);
+    }
+    function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+            x: evt.clientX - rect.left,
+            y: evt.clientY - rect.top
+        };
+    }
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+
+    canvas.addEventListener('mousemove', function (evt) {
+        var mousePos = getMousePos(canvas, evt);
+        var message = 'THE DISTANCE FROM YOUR GALAXY IN LIGHT YEAR: ' + mousePos.x + ',' + mousePos.y;
+        writeMessage(canvas, message);
+    }, false);
+
+    function openQuiz() {
+        window.open("astroquiz.html");
+    }
+</script>
+
+</body>
+</html>
